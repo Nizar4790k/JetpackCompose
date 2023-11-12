@@ -18,6 +18,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -34,15 +37,28 @@ import androidx.compose.ui.unit.sp
 import com.example.jetpackcompose.ui.theme.JetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
+
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
 
+            val scafoldState  = rememberScaffoldState()
+            
+           Scaffold(modifier = Modifier.fillMaxSize(),
+                    scaffoldState  =
+               ) {
+
+           }
+
+            /*
             val painter = painterResource(id = R.drawable.duck)
             val description = "Duck "
             val title = "Yellow Duck"
 
+
             ImageCard(painter = painter, contentDescrition = description, title = title)
+  */
 
             /*
             Row(
@@ -113,7 +129,7 @@ fun ImageCard(
 
              Image(painter,contentDescrition,Modifier, Alignment.Center, ContentScale.Crop)
 
-             Box(modifier=Modifier
+             Box(modifier= Modifier
                  .fillMaxSize()
                  .background(
                      Brush.verticalGradient(
@@ -122,7 +138,7 @@ fun ImageCard(
                              Color.Black
                          ),
 
-                         startY= 300f
+                         startY = 300f
                      )
                  ))
 
