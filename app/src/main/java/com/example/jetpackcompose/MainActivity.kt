@@ -17,27 +17,24 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
-            TextfieldsButtomsSnackBar()
-
-        }
-
-
-        /*
-            HelloWorld()
-            TextModification()
-
-
-         */
 
             /*
+
+             HelloWorld()
+            TextModification()
 
             val painter = painterResource(id = R.drawable.duck)
             val description = "Duck "
             val title = "Yellow Duck"
 
             ImageCard(painter = painter, contentDescrition = description, title = title)
+
+          */
             
-             */
+            TextfieldsButtomsSnackBar()
+
+        }
+
 
             }
         }
